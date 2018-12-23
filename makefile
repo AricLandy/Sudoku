@@ -1,4 +1,4 @@
-# Sudoku Solver Makfile
+# Sudoku Solver Makefile
 # Written by Aric Landy on 12/23/2018
 
 # Name of executaable
@@ -16,6 +16,5 @@ make solve:
 
 clean:
 	rm -f $(binaries) $(objects) *.o $(EXECUTABLE)
-#	rm -Rf *.dSYM
 
 .PHONY: solve clean
