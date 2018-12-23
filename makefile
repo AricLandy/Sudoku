@@ -3,6 +3,7 @@
 
 # Name of executaable
 EXECUTABLE = solve
+TESTEX = test
 
 # Name of the compiler
 CXX = g++
@@ -14,7 +15,11 @@ CFLAGS = -Wall -Werror -Wextra -pedantic -O3
 make solve:
 	$(CXX) main.cpp Solver.cpp $(CFLAGS) -o $(EXECUTABLE)
 
-clean:
-	rm -f $(binaries) $(objects) *.o $(EXECUTABLE)
+make test:
+	$(CXX) sudoku_tests.cpp $(CFLAGS) -o $(TESTEX) 
 
-.PHONY: solve clean
+
+clean:
+	rm -f $(binaries) $(objects) *.o $(EXECUTABLE) $(TESTEX)
+
+.PHONY: solve clean test

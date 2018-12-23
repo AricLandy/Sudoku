@@ -8,6 +8,8 @@
 
 #include "Solver.hpp"
 
+
+
 // Element ctors
 element::element(int num_in) : num(num_in){ }
 
@@ -77,10 +79,10 @@ bool Solver::check_row(Iterator & it){
     if (it.datum() == -1) { return true; }
     std::pair<int, int> loc = it.location;
     // Loop through the current row
-    for (unsigned el = 0; el < dimension; ++el){
+    for (unsigned el = 0; el < (unsigned)dimension; ++el){
         
         // If a different element in the row equals the current element
-        if (el != loc.second && puzzle[loc.first][el].num == puzzle[loc.first][loc.second].num){
+        if (el != (unsigned)loc.second && puzzle[loc.first][el].num == puzzle[loc.first][loc.second].num){
             return false;
         }
     }
@@ -97,10 +99,10 @@ bool Solver::check_col(Iterator & it){
     if (it.datum() == -1) { return true; }
     std::pair<int, int> loc = it.location;
     // Loop through the current row
-    for (unsigned el = 0; el < dimension; ++el){
+    for (unsigned el = 0; el < (unsigned)dimension; ++el){
         
         // If a different element in the column equals the element in the current row
-        if (el != loc.first && puzzle[el][loc.second].num == puzzle[loc.first][loc.second].num){
+        if (el != (unsigned)loc.first && puzzle[el][loc.second].num == puzzle[loc.first][loc.second].num){
             return false;
         }
     }
@@ -125,7 +127,7 @@ bool Solver::check_box(Iterator & it){
     // and check to find a duplicate
     for (unsigned i = 0; i < 3; ++i){
         for (unsigned j = 0; j < 3; ++j){
-            if (row+i != loc.first || col+j != loc.second){
+            if (row+i != (unsigned)loc.first || col+j != (unsigned)loc.second){
                 if (puzzle[row+i][col+j].num == puzzle[loc.first][loc.second].num){
                     return false;
                 }

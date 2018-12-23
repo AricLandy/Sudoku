@@ -1,4 +1,4 @@
-# Sudoku
+# Sudoku Solver
 
 This is a Sudoku puzzle solver program
 

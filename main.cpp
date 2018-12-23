@@ -4,37 +4,45 @@
 //  Created by Aric Landy on 12/21/18.
 //  Copyright © 2018 Aric Landy. All rights reserved.
 
-#include <iostream>
-#include <vector>
+
+
+#include <string>
 #include "Solver.hpp"
 
 
 
 int main() {
     
-    std::vector<std::vector<int> > s;
     
-    std::vector<int> r1 = {-1, 6, -1, 1, -1, 4, -1, 5, -1};
-    std::vector<int> r2 = {-1, -1, 8, 3, -1, 5, 6, -1, -1};
-    std::vector<int> r3 = {2, -1, -1, -1, -1, -1, -1, -1, 1};
-    std::vector<int> r4 = {8, -1, -1, 4, -1, 7, -1, -1, 6};
-    std::vector<int> r5 = {-1, -1, 6, -1, -1, -1, 3, -1, -1};
-    std::vector<int> r6 = {7, -1, -1, 9, -1, 1, -1, -1, 4};
-    std::vector<int> r7 = {5, -1, -1, -1, -1, -1, -1, -1, 2};
-    std::vector<int> r8 = {-1, -1, 7, 2, -1, 6, 9, -1, -1};
-    std::vector<int> r9 = {-1, 4, -1, 5, -1, 8, -1, 7, -1};
-    s.push_back(r1);
-    s.push_back(r2);
-    s.push_back(r3);
-    s.push_back(r4);
-    s.push_back(r5);
-    s.push_back(r6);
-    s.push_back(r7);
-    s.push_back(r8);
-    s.push_back(r9);
+    std::ios_base::sync_with_stdio(false);
+    
+//    // Input redirection
+//    #ifdef __APPLE__
+//    if(!freopen("/Users/alandy/Documents/Sudoku1/Sudoku/test-1.txt"
+//                , "r", stdin)){
+//        std::cerr << "freopen() failed, file not found" << std::endl;
+//        exit(1);
+//    }
+//    #endif
     
     
-    Solver solve(s, 9);
+    std::vector<std::vector<int> > puzzle;
+    
+    for (unsigned i = 0; i < 9; ++i){
+        std::vector<int> temp;
+        temp.reserve(9);
+        for (unsigned j = 0; j < 9; ++j){
+            std::string temp_string;
+            std::cin >> temp_string;
+            int temp_int;
+            temp_int = stoi(temp_string);
+            temp.push_back(temp_int);
+        }
+        puzzle.push_back(temp);
+    }
+    
+    
+    Solver solve(puzzle, 9);
     solve.solve_puzzle();
     
     return 0;

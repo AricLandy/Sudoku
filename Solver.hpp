@@ -9,7 +9,7 @@
 #define Solver_hpp
 
 
-#include <stdio.h>
+//#include <stdio.h>
 #include <vector>
 #include <iostream>
 
@@ -26,12 +26,12 @@ public:
     // element custom ctor
     element(int num_in);
     
+    // Holds the number of item in the puzzle
+    int num;
+    
     // if the element is in the original puzzle,
     //orig is true and therefore cannor be changed by the puzzle
     bool orig;
-    
-    // Holds the number of item in the puzzle
-    int num;
 };
 
 
