@@ -33,10 +33,11 @@ int main() {
         std::vector<int> temp;
         temp.reserve(9);
         for (unsigned j = 0; j < 9; ++j){
-            std::string temp_string;
-            std::cin >> temp_string;
+            //std::string temp_string;
+            //std::cin >> temp_string;
             int temp_int;
-            temp_int = std::stoi(temp_string);
+            //temp_int = stoi(temp_string);
+            std::cin >> temp_int;
             temp.push_back(temp_int);
         }
         puzzle.push_back(temp);
