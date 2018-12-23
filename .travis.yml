@@ -1,9 +1,7 @@
-language:
-	- cpp
-compiler:
-	- g++
+language: cpp
+compiler: g++
 script:
-	- make solve
-	- make test
-	- ./test
+ - make solve
+ -  make test
+ - ./test
 
