@@ -2,8 +2,6 @@
 
 [![Build Status](https://travis-ci.org/AricLandy/Sudoku.svg?branch=master)](https://travis-ci.org/AricLandy/Sudoku)
 
-If you are unfamiliar with what a Sudoku puzzle is, check out the following link
-https://www.kristanix.com/sudokuepic/sudoku-rules.php
 
 ## How it works
 This program is build around a backtracking algorithm. Moving throug the puzzle (see "Iterator Class"), each empty element is tested with all possibilites [1, 2, 3...9]. When one number is considered promising (see "Promising"), the program moves on to the next element. If all possibilities are exhausted and none are "promising", the program moves back to the previous element. When the program reaches a "promising" value at the last element, the puzzle is solved  
