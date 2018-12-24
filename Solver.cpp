@@ -7,7 +7,7 @@
 
 
 #include "Solver.hpp"
-
+#include <fstream>
 
 
 // Element ctors
@@ -17,8 +17,8 @@ element::element() : num(-1), orig(false) { }
 
 
 // Solver ctor
-Solver::Solver(std::vector<std::vector<int> > puzzle_in, int dim)
-    : dimension(dim) {
+Solver::Solver(int dim, std::ifstream & is)
+    : dimension(dim){
         
         puzzle.resize(dimension);
         bool found_first = false;
@@ -28,19 +28,26 @@ Solver::Solver(std::vector<std::vector<int> > puzzle_in, int dim)
             puzzle[i].resize(dim);
             for (unsigned j = 0; j < (unsigned)dim; ++j){
                 
+                // Create a temporary int
+                int temp_int;
+                is >> temp_int;
+                
+
+                // If the value is not -1, it is an original element
+                // original elements can not be modified by the program
+                if (temp_int != -1){
+                    element temp(temp_int);
+                    temp.orig = true;
+                    puzzle[i][j] = temp;
+                }
+                
                 // If found the first changeable element, update first
                 if (!found_first && puzzle[i][j].num == -1){
                     found_first = true;
                     first.first = i;
                     first.second = j;
                 }
-                // If the value is not -1, it is an original element
-                // original elements can not be modified by the program
-                if (puzzle_in[i][j] != -1){
-                    element temp(puzzle_in[i][j]);
-                    temp.orig = true;
-                    puzzle[i][j] = temp;
-                }
+                
             }
         }
     }
@@ -48,25 +55,25 @@ Solver::Solver(std::vector<std::vector<int> > puzzle_in, int dim)
 
 
 // Prints out the puzzle
-void Solver::print_puzzle(){
-    std::cout << " ------- ------- -------\n";
+void Solver::print_puzzle(std::ostream & os){
+    os << " ------- ------- -------\n";
     
     for (unsigned row = 0; row < puzzle.size(); ++row){
         
-        std::cout << "| ";
+        os << "| ";
         
         for (unsigned element = 0; element < puzzle[row].size(); ++element){
             // if the value is -1, it is not an original element
             // therefore print out nothing (spaces for formatting)
             if (puzzle[row][element].num != -1){
-                std::cout << puzzle[row][element].num << " ";
+                os << puzzle[row][element].num << " ";
             }
-            else { std::cout << "  "; }
-            if (element % 3 == 2) { std::cout << "| "; }
+            else { os << "  "; }
+            if (element % 3 == 2) { os << "| "; }
         }
         
-        std::cout << "\n";
-        if (row % 3 == 2) { std::cout << " ------- ------- -------\n"; }
+        os << "\n";
+        if (row % 3 == 2) { os << " ------- ------- -------\n"; }
 
     }
 }
@@ -210,23 +217,23 @@ int Solver::gen_perms(Iterator & it){
 
 // Prints the old puzzle, solves it, prints the solution
 // returns -1 if not solvable
-int Solver::solve_puzzle(){
+int Solver::solve_puzzle(std::ostream & os){
     
     // Print the original puzzle
-    print_puzzle();
+    //print_puzzle(os);
     
     // Create an iterator (defualt starts at (0, 0))
     Iterator it(*this);
     
     // Call gen_perms
     if (gen_perms(it) == -1){
-        std::cout << "Puzzle not solvable\n";
+        os << "Puzzle not solvable\n";
         return -1;
     }
     
     // Print out the end result
-    std::cout << "\n\n";
-    print_puzzle();
+    //os << "\n\n";
+    print_puzzle(os);
 
     return 0;
 }

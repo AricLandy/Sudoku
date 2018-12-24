@@ -9,9 +9,10 @@
 #define Solver_hpp
 
 
-//#include <stdio.h>
+
 #include <vector>
 #include <iostream>
+#include <fstream>
 
 
 
@@ -44,13 +45,13 @@ class Solver{
 public:
     
     // Solver class ctor, initializes to the parameter vector
-    Solver(std::vector<std::vector<int> > puzzle_in, int dim);
+    Solver(int dim, std::ifstream & is);
     
     // Prints the puzzle to the output
-    void print_puzzle();
+    void print_puzzle(std::ostream & os);
     
     // Prints the old puzzle, solves it, prints the solution
-    int solve_puzzle();
+    int solve_puzzle(std::ostream & os);
     
     
 
