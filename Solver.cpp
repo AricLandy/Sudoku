@@ -162,6 +162,7 @@ bool Solver::promising(Iterator & it){
 // returns 1 if solved and -1 if not solvable
 int Solver::gen_perms(Iterator & it){
     
+    
     // if the end of the puzzle is reached
     if (it.end()){
         // and valid...
