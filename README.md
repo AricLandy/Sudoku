@@ -15,20 +15,6 @@ make solve
 ```
 
 
-------- ------- -------
-|     6     | 1     4 |    5    | 
-|         8 | 3     5 | 6       | 
-| 2         |           |       1 | 
-------- ------- -------
-| 8       | 4    7 |       6 | 
-|       6 |          | 3       | 
-| 7       | 9    1 |       4 | 
-------- ------- -------
-| 5       |          |       2 | 
-|       7 | 2    6 | 9       | 
-|    4    | 5    8 |    7    | 
-------- ------- -------
-
 
 ## How it works
 A custom iterator starts at the top left of the puzzle and moves down to the bottom right. When it is at each element, it tests all possible values (starting at 1 all the way to 9). When an element is considered promising (see "Promising"), the iterator stopt incrementing hte value and moves on to the next element. If all possibilities are exhausted and none are "promising", the program moves back to the previous element and starts incrementing it from where it previously left off. When the program reaches a "promising" value at the last element, the puzzle is solved  
