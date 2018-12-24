@@ -5,7 +5,7 @@
 
 ## How to Run
 1) Clone this repository
-```
+``` shell
 git clone https://github.com/AricLandy/Sudoku-Solver.git
 ```
 2) Build and run with the test-1-input.txt
@@ -14,6 +14,20 @@ make solve
 ./solve
 ```
 
+
+------- ------- -------
+|     6     | 1     4 |    5    | 
+|         8 | 3     5 | 6       | 
+| 2         |           |       1 | 
+------- ------- -------
+| 8       | 4    7 |       6 | 
+|       6 |          | 3       | 
+| 7       | 9    1 |       4 | 
+------- ------- -------
+| 5       |          |       2 | 
+|       7 | 2    6 | 9       | 
+|    4    | 5    8 |    7    | 
+------- ------- -------
 
 
 ## How it works
