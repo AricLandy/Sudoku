@@ -16,7 +16,7 @@ make solve:
 	$(CXX) main.cpp Solver.cpp $(CFLAGS) -o $(EXECUTABLE)
 
 make test:
-	$(CXX) sudoku_tests.cpp $(CFLAGS) -o $(TESTEX) 
+	$(CXX) sudoku_tests.cpp Solver.cpp $(CFLAGS) -o $(TESTEX) 
 
 
 clean:
