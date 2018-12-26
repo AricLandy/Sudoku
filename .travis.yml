@@ -3,4 +3,5 @@ compiler: g++
 script:
  - make solve
  - make test
- - ./test
+ - coverage ./test
+
