@@ -1,6 +1,6 @@
 # Sudoku Solver
 
-[![Build Status](https://travis-ci.org/AricLandy/Sudoku.svg?branch=master)](https://travis-ci.org/AricLandy/Sudoku)
+[![Build Status](https://travis-ci.org/AricLandy/Sudoku-Solver.svg?branch=master)](https://travis-ci.org/AricLandy/Sudoku-Solver)
 
 
 ## How to Run
