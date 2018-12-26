@@ -97,10 +97,21 @@ bool test_2(){
 int main(){
 
     std::ios_base::sync_with_stdio(false);
+    bool all_tests = true;
     
-    if (test_1() && test_2()){
-		std::cout << "All Tests passed\n";
+    if (!test_1()){
+        all_tests = false;
 	}
+    if (!test_2()){
+        all_tests = false;
+    }
     
-	return 0;
+    if (all_tests){
+        std::cout << "All Tests passed\n";
+        return 0;
+    }
+    else{
+        exit(1);
+    }
+
 }
