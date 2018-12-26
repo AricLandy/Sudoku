@@ -23,7 +23,7 @@ bool check_diff(fstream & correct, fstream & output){
 bool test_1(){
     
     ifstream is;
-    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-1-input.txt");
+    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-2-input.txt");
     
     fstream output;
     output.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/output.txt");
