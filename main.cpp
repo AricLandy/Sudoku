@@ -15,13 +15,13 @@
 // main.cpp just runs test 1 as an example
 int main() {
     
-    std::ifstream is;
-    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/test-1-input.txt");
+    std::ifstream p1_stream;
+    p1_stream.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-1-input.txt");
     
-    Solver tester(9, is);
+    Solver tester(9, p1_stream);
     tester.solve_puzzle(std::cout);
     
-    is.close();
+    p1_stream.close();
 
     return 0;
 }

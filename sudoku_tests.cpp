@@ -23,20 +23,20 @@ bool check_diff(fstream & correct, fstream & output){
 bool test_1(){
     
     ifstream is;
-    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/test-1-input.txt");
+    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-1-input.txt");
     
     fstream output;
-    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/output.txt");
+    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/output.txt");
     
     
     Solver tester(9, is);
     tester.solve_puzzle(output);
     
     output.close();
-    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/output.txt");
+    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/output.txt");
 
     fstream correct;
-    correct.open("/Users/alandy/Documents/Sudoku1/Sudoku/test-1-correct.txt");
+    correct.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-1-correct.txt");
 
     bool val = check_diff(correct, output);
 
@@ -59,20 +59,20 @@ bool test_1(){
 bool test_2(){
     
     ifstream is;
-    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/test-2-input.txt");
+    is.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-2-input.txt");
     
     fstream output;
-    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/output.txt");
+    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/output.txt");
     
     
     Solver tester(9, is);
     tester.solve_puzzle(output);
     
     output.close();
-    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/output.txt");
+    output.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/output.txt");
     
     fstream correct;
-    correct.open("/Users/alandy/Documents/Sudoku1/Sudoku/test-2-correct.txt");
+    correct.open("/Users/alandy/Documents/Sudoku1/Sudoku/Test_Files/test-2-correct.txt");
     
     bool val = check_diff(correct, output);
     
