@@ -8,7 +8,7 @@ before_install:
 script:
  - make solve
  - make test
- - coverage run test
+ - coverage run sudoku_tests.cpp
 
 after_success:
  - coveralls
