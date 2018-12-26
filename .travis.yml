@@ -3,5 +3,6 @@ compiler: g++
 script:
  - make solve
  - make test
- - coverage ./test
-
+ - ./test
+after_success:
+ - coveralls
