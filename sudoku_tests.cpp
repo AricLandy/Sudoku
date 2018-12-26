@@ -111,7 +111,7 @@ int main(){
         return 0;
     }
     else{
-        exit(1);
+        return -1;
     }
 
 }
