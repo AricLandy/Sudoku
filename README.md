@@ -4,6 +4,7 @@
 This solver uses a backtracking algorithm. 
 A custom iterator starts at the top left of the puzzle and moves down to the bottom right. When it is at each element, it tests all possible values (starting at 1 all the way to 9). When an element is considered promising (see "Promising"), the iterator moves on to the next element. If all possibilities are exhausted and none are "promising", the program moves back to the previous element and starts incrementing it from where it previously left off. When the program reaches a "promising" value at the last element, the puzzle is solved  
 ### Example Output
+```bash
  ------- ------- -------
 |   6   | 1   4 |   5   | 
 |     8 | 3   5 | 6     | 
@@ -30,6 +31,7 @@ A custom iterator starts at the top left of the puzzle and moves down to the bot
 | 3 1 7 | 2 4 6 | 9 8 5 | 
 | 6 4 2 | 5 9 8 | 1 7 3 | 
  ------- ------- -------
+ ```
 ### Promising
 An element is considered promising if it is valid in terms of the Sudoku puzzle rules. This means that there can not be any elements of the same value in the same row, column, or box
 ## How to Run
