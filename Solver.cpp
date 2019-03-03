@@ -221,7 +221,7 @@ int Solver::gen_perms(Iterator & it){
 int Solver::solve_puzzle(std::ostream & os){
     
     // Print the original puzzle
-    //print_puzzle(os);
+    print_puzzle(os);
     
     // Create an iterator (defualt starts at (0, 0))
     Iterator it(*this);
