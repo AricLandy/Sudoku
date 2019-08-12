@@ -1,5 +1,7 @@
 # Sudoku Solver
 [![Build Status](https://travis-ci.org/AricLandy/Sudoku-Solver.svg?branch=master)](https://travis-ci.org/AricLandy/Sudoku-Solver)
+
+This Project was developed before I used Git Hub to show my work, all of the code was written by me, just unfortunately not using proper source control techniques. 
 ## How it works
 This solver uses a backtracking algorithm. 
 A custom iterator starts at the top left of the puzzle and moves down to the bottom right. When it is at each element, it tests all possible values (starting at 1 all the way to 9). When an element is considered promising (see "Promising"), the iterator moves on to the next element. If all possibilities are exhausted and none are "promising", the program moves back to the previous element and starts incrementing it from where it previously left off. When the program reaches a "promising" value at the last element, the puzzle is solved  
