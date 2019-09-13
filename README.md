@@ -47,5 +47,5 @@ make solve
 ./solve
 ```
 ## Further Expansion Ideas
-1) This puzzle only works for a standard 9x9 puzzle but since most of the code is wrtten generically, a few minor modifications could allow it to work for Sudoku puzzles of any size
+1) This puzzle only works for a standard 9x9 puzzle but since most of the code is written generically, a few minor modifications could allow it to work for Sudoku puzzles of any size
 2) The main way to run this program is to create a textfile and then edit main.cpp to take in that specific text file. Adding a graphical way to input data would be very helpfull
